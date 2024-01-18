@@ -4,11 +4,11 @@ import configparser
 from paho.mqtt import client as mqtt_client
 
 config = configparser.ConfigParser()
-config.read('mqtt_config.ini')
+config.read('config.ini')
 
-server_addr = config.get('main', 'server_addr')
-port = config.get('main', 'port')
-topic = config.get('main', 'topic')
+server_addr = config.get('mqtt', 'server_addr')
+port = config.get('mqtt', 'port')
+topic = config.get('mqtt', 'topic')
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 
 
