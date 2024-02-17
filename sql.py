@@ -7,11 +7,12 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 
+# 初始化数据库对象
 def sql_ini():
     for i in tqdm(range(5), ascii=True, desc='重连次数'):
         try:
             print('正在尝试连接Mysql服务器...')
-            sql = pymysql.connect(host=config.get('sql', 'host'),
+            sql = pymysql.connect(host=config.get('sql', 'server_ip'),
                                   port=int(config.get('sql', 'port')),
                                   user=config.get('sql', 'user'),
                                   password=config.get('sql', 'pwd'),
@@ -26,6 +27,7 @@ def sql_ini():
     raise Exception('连接到Mysql服务器失败！')
 
 
+# 新增操作
 def sql_add_user(user_id: str, user_pwd: str, user_email: str):
     import uuid
     new_uuid = uuid.uuid4()
@@ -90,4 +92,3 @@ def sql_add_device(device_uuid: str, device_type: str, device_owner: int, device
         print('设备新建成功')
     finally:
         db.close()
-
