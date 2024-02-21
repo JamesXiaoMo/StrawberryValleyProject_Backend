@@ -51,7 +51,7 @@ def sql_add_user(user_id: str, user_pwd: str, user_email: str):
         db.close()
 
 
-def sql_add_data(data_owner: str, data_air_temp: int, data_air_hum: int, data_illum: int, data_battery: int,
+def sql_add_data(data_owner: int, data_air_temp: float, data_air_hum: float, data_illum: float, data_battery: int,
                  data_signal: int):
     db = sql_ini()
     cursor = db.cursor()
@@ -74,13 +74,15 @@ def sql_add_data(data_owner: str, data_air_temp: int, data_air_hum: int, data_il
         db.close()
 
 
-def sql_add_device(device_uuid: str, device_type: str, device_owner: int, device_state: int):
+def sql_add_device(device_type: str, device_owner: int, device_state: int):
+    import uuid
+    new_uuid = uuid.uuid4()
     db = sql_ini()
     cursor = db.cursor()
     print('正在尝试新建设备...')
     try:
         cursor.execute("INSERT INTO device_table (device_uuid, device_type, device_owner, device_state) VALUES"
-                       " (%s, %s, %s, %s)", (device_uuid, device_type, device_owner,device_state))
+                       " (%s, %s, %s, %s)", (new_uuid, device_type, device_owner, device_state))
         db.commit()
     except pymysql.err.ProgrammingError as e:
         print(f'新建设备失败！程序错误！原因是:{e}')
@@ -92,3 +94,11 @@ def sql_add_device(device_uuid: str, device_type: str, device_owner: int, device
         print('设备新建成功')
     finally:
         db.close()
+
+
+def data_processing(raw_data: str):
+    temp = float(raw_data.split(':')[0])
+    hum = float(raw_data.split(':')[1])
+    print('温度：' + str(temp))
+    print('湿度：' + str(hum))
+    sql_add_data(2, temp, hum, 0, 100, 100)
