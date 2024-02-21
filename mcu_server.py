@@ -12,7 +12,7 @@ def listening():
     port = int(config.get('mcu_server', 'port'))
     server_socket.bind((host, port))
     server_socket.listen(0)
-    print('开始侦听单片机')
+    print('开始侦听单片机\n')
     while True:
         client_socket, addr = server_socket.accept()
         print("来自{}:{}的连接".format(addr[0], addr[1]))

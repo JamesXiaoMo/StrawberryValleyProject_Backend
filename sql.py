@@ -1,5 +1,4 @@
 import time
-from tqdm import tqdm
 import pymysql
 import configparser
 
@@ -9,7 +8,7 @@ config.read('config.ini')
 
 # 初始化数据库对象
 def sql_ini():
-    for i in tqdm(range(5), ascii=True, desc='重连次数'):
+    for i in range(5):
         try:
             print('正在尝试连接Mysql服务器...')
             sql = pymysql.connect(host=config.get('sql', 'server_ip'),

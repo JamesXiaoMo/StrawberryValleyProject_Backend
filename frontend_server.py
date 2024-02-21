@@ -1,6 +1,6 @@
 import configparser
 import socket
-import sql
+
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -12,7 +12,7 @@ def listening():
     port = int(config.get('frontend_server', 'port'))
     server_socket.bind((host, port))
     server_socket.listen(0)
-    print('开始侦听前端')
+    print('开始侦听前端\n')
     while True:
         client_socket, addr = server_socket.accept()
         print("来自{}:{}的连接".format(addr[0], addr[1]))

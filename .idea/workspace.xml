@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="344723e3-bf71-4778-9a40-ae770581ef8a" name="更改" comment="upload">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcp_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/mcu_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcu_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/mcu_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +161,7 @@
       <workItem from="1708231875650" duration="5295000" />
       <workItem from="1708246706221" duration="5285000" />
       <workItem from="1708496161382" duration="6758000" />
-      <workItem from="1708505660187" duration="4469000" />
+      <workItem from="1708505660187" duration="7443000" />
     </task>
     <task id="LOCAL-00001" summary="upload">
       <option name="closed" value="true" />
@@ -235,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708516843790</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="upload">
+      <option name="closed" value="true" />
+      <created>1708518305331</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708518305331</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +268,6 @@
     <SUITE FILE_PATH="coverage/StrawberryValleyProject_Backend$sql.coverage" NAME="sql 覆盖结果" MODIFIED="1708499468887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/StrawberryValleyProject_Backend$test.coverage" NAME="test 覆盖结果" MODIFIED="1708514729356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/StrawberryValleyProject_Backend$mqtt_client.coverage" NAME="mqtt_client 覆盖结果" MODIFIED="1704900939989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/StrawberryValleyProject_Backend$main.coverage" NAME="main 覆盖结果" MODIFIED="1708505731329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/StrawberryValleyProject_Backend$main.coverage" NAME="main 覆盖结果" MODIFIED="1708521096731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
