@@ -4,6 +4,8 @@ import socket
 
 config = configparser.ConfigParser()
 config.read('config.ini')
+socket_list = []
+socket_addr_list = []
 
 
 def listening():
