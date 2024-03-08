@@ -1,6 +1,8 @@
 import time
 import pymysql
 import configparser
+import pandas as pd
+import main
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -55,6 +57,7 @@ def sql_add_data(data_owner: int, data_air_temp: float, data_air_hum: float, dat
     db = sql_ini()
     cursor = db.cursor()
     print('正在尝试新建数据...')
+    main.s_print("数据已被保存到数据库")
     try:
         cursor.execute("INSERT INTO data_table (data_owner, data_air_temp, data_air_hum, data_illum, "
                        "data_battery, data_signal) VALUES (%s, %s, %s, %s, %s, %s)", (data_owner, data_air_temp,
@@ -95,9 +98,30 @@ def sql_add_device(device_type: str, device_owner: int, device_state: int):
         db.close()
 
 
+def sql_search_data(parameter: str):
+    db = sql_ini()
+    if parameter == 'hour':
+        sql_command = "SELECT * FROM data_table WHERE `current_time` > DATE_SUB(NOW(), INTERVAL 1 HOUR)"
+    elif parameter == 'day':
+        sql_command = "SELECT * FROM data_table WHERE `current_time` > DATE_SUB(NOW(), INTERVAL 1 DAY)"
+    elif parameter == 'week':
+        sql_command = "SELECT * FROM data_table WHERE `current_time` > DATE_SUB(NOW(), INTERVAL 1 WEEK)"
+    elif parameter == 'month':
+        sql_command = "SELECT * FROM data_table WHERE `current_time` > DATE_SUB(NOW(), INTERVAL 1 MONTH)"
+    elif parameter == 'year':
+        sql_command = "SELECT * FROM data_table WHERE `current_time` > DATE_SUB(NOW(), INTERVAL 1 YEAR)"
+    df = pd.read_sql(sql_command, db)
+    df.to_json(parameter + '.json', index=False)
+
 def data_processing(raw_data: str):
     temp = float(raw_data.split(':')[0])
     hum = float(raw_data.split(':')[1])
     print('温度：' + str(temp))
     print('湿度：' + str(hum))
+    main.s_print('温度：' + str(temp))
+    main.s_print('湿度：' + str(hum))
     sql_add_data(2, temp, hum, 0, 100, 100)
+
+
+if __name__ == '__main__':
+    sql_search_data()

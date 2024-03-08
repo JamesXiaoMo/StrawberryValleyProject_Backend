@@ -1045,7 +1045,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="295" parent="1" name="strawberryvally">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-01-18.13:48:29</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-02-25.14:33:08</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="296" parent="1" name="Jameswu">
@@ -1083,37 +1083,38 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="304" parent="301" name="data_table_pk">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>542</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="305" parent="301" name="data_owner">
-      <DasType>char(1)|0s</DasType>
+      <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="306" parent="301" name="data_time">
-      <DasType>datetime|0s</DasType>
+    <column id="306" parent="301" name="data_air_temp">
+      <DasType>float|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="307" parent="301" name="data_air_temp">
-      <DasType>int|0s</DasType>
+    <column id="307" parent="301" name="data_air_hum">
+      <DasType>float|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="308" parent="301" name="data_air_hum">
-      <DasType>int|0s</DasType>
+    <column id="308" parent="301" name="data_illum">
+      <DasType>float|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="309" parent="301" name="data_illum">
+    <column id="309" parent="301" name="data_battery">
       <DasType>int|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="310" parent="301" name="data_battery">
+    <column id="310" parent="301" name="data_signal">
       <DasType>int|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="311" parent="301" name="data_signal">
-      <DasType>int|0s</DasType>
+    <column id="311" parent="301" name="current_time">
+      <DasType>datetime|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>8</Position>
     </column>
     <index id="312" parent="301" name="PRIMARY">
@@ -1133,11 +1134,11 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>1</Position>
     </column>
     <column id="315" parent="302" name="device_uuid">
-      <DasType>char(1)|0s</DasType>
+      <DasType>char(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="316" parent="302" name="device_type">
-      <DasType>char(1)|0s</DasType>
+      <DasType>char(50)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="317" parent="302" name="device_owner">
@@ -1159,21 +1160,21 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="321" parent="303" name="user_table_pk">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="322" parent="303" name="user_uuid">
-      <DasType>char(1)|0s</DasType>
+      <DasType>char(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="323" parent="303" name="user_pwd">
-      <DasType>char(1)|0s</DasType>
+      <DasType>char(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="324" parent="303" name="user_email">
-      <DasType>char(1)|0s</DasType>
+      <DasType>char(50)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="325" parent="303" name="user_state">
@@ -1181,7 +1182,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>5</Position>
     </column>
     <column id="326" parent="303" name="user_id">
-      <DasType>char(1)|0s</DasType>
+      <DasType>char(50)|0s</DasType>
       <Position>6</Position>
     </column>
     <index id="327" parent="303" name="PRIMARY">
